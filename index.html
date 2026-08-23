@@ -47,10 +47,15 @@ button{font-family:inherit}
 .cc-ctrls{display:flex;align-items:center;justify-content:center;gap:22px;margin-top:8px}
 .cc-ctrls button{border:0;background:none;cursor:pointer;color:#111;padding:4px;display:inline-flex;border-radius:8px}
 .cc-ctrls button:hover{background:rgba(0,0,0,.06)}
+/* the faux macOS menu-bar widgets are a desktop cue — hide them where the header would wrap.
+   !important because these elements carry inline display styles that would otherwise win. */
+@media(max-width:820px){
+  #btn-wifi,#btn-music,#btn-bt,#btn-batt,#clock{display:none!important}
+}
 /* mobile: hide the hero background center line + tighten nav */
 @media(max-width:640px){
-  .nav-links{display:none}
-  .hero-line{display:none}
+  .nav-links{display:none!important}
+  .hero-line{display:none!important}
 }
 </style>
 </head>
